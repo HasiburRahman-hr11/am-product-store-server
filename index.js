@@ -1,15 +1,25 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const userRoute = require('./routes/userRoute');
+const productRoute = require('./routes/productRoute');
+const fileUpload = require('express-fileupload');
 
 require("dotenv").config();
 
 const app = express();
 
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }))
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static('public'));
 app.use(cors());
+app.use(fileUpload());
+
+// app.use(multer().any());
+
+// Routes
+app.use(userRoute);
+app.use(productRoute);
 
 
 
