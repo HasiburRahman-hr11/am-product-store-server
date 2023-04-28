@@ -1,4 +1,4 @@
-const { Schema, model, Types } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 const userSchema = new Schema(
   {
@@ -28,7 +28,7 @@ const userSchema = new Schema(
       type: String,
       default: "subscriber",
     },
-    profilePicture: { type: Buffer },
+    profilePicture: { type: Buffer }
   },
   { timestamps: true }
 );

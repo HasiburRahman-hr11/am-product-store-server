@@ -49,7 +49,10 @@ exports.getAllProducts = async (req, res) => {
 exports.getSingleProduct = async (req, res) => {
   const { id } = req.params;
   try {
-    const product = await Product.findById(id);
+    const product = await Product.findById(id).populate({
+      path: "user",
+      select: "firstName lastName email _id",
+    });
     if (product) {
       res.status(200).json(product);
     }

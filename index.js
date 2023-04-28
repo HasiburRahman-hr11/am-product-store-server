@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const userRoute = require('./routes/userRoute');
 const productRoute = require('./routes/productRoute');
+const chatRoute = require('./routes/chatRoute');
 const fileUpload = require('express-fileupload');
 
 require("dotenv").config();
@@ -20,6 +21,7 @@ app.use(fileUpload());
 // Routes
 app.use(userRoute);
 app.use(productRoute);
+app.use(chatRoute);
 
 
 
