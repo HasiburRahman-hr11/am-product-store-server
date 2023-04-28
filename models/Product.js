@@ -12,7 +12,7 @@ const productSchema = new Schema(
       required: true,
     },
     thumbnail: { type: Buffer },
-    addedBy:{ type: String}
+    user:{ type: Schema.Types.ObjectId , ref:'User'}
   },
   { timestamps: true }
 );
